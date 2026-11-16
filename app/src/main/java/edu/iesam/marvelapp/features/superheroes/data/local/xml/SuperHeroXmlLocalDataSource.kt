@@ -75,4 +75,13 @@ class SuperHeroXmlLocalDataSource (
 
     }
 
+    fun update(superHero: SuperHero) {
+
+        // superHeroes contiene todos los supeprHeroes EXCEPTO el que quiero modificar
+        val superHeroes = findAll().filterNot { it.id == superHero.id }.toMutableList()
+        superHeroes.add(superHero)
+        save(superHeroes)
+
+    }
+
 }
