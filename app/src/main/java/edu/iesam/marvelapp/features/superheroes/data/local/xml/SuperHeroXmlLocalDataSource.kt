@@ -63,16 +63,12 @@ class SuperHeroXmlLocalDataSource (
 
     // Metodo para eliminar todos los superheroes
     fun deleteAll() {
-
         sharedPref.edit { remove(keySuperHero) }
-
     }
 
     // Metodo para eliminar un superheroe por su id
     fun deleteById(id: String) {
-
         save(findAll().filterNot { it.id == id })
-
     }
 
 }
