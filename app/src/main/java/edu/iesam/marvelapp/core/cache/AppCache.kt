@@ -26,6 +26,6 @@ class AppCacheTTL(
 
     override fun isExpired(key: String, ttl: Long): Boolean {
         val timeSaved = sharedPref.getLong(key, -1)
-        return (appTime.currentTimeToLong() - timeSaved) < ttl
+        return (appTime.currentTimeToLong() - timeSaved) >= ttl
     }
 }
